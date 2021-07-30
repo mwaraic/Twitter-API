@@ -1,6 +1,0 @@
-Task 1
-
-Section 1
-User login and registration
-
-Section 2
