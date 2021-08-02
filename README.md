@@ -10,6 +10,10 @@ docker compose up<br/>
 docker compose exec python bash<br/>
 python manage.py test<br/>
 
+
+## **URL:**<br/>
+127.0.0.1:8000 <br/>
+
 ## **APIs:**
 
 ### **User Login and Registration**<br/>
