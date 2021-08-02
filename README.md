@@ -1,27 +1,27 @@
 # Twitter-API
 
 
-**Run commands:**
+## **Run commands:**
 
 docker compose build <br/>
 docker compose up
 
-**Test:**
+## **Test:**
 docker compose exec python bash
 python manage.py test
 
-**APIs:**
+## **APIs:**
 
-**User Login and Registration**
+### **User Login and Registration**<br/>
 Send a **POST** request to account/login to login
 Send a **POST** request to account/signup to register
 
-**Message**
+### **Message**<br/>
 Send a **GET** request to messages/<:userID> to retrieve a list
 of messages <br/>
-Send a **POST** request to messages/<:userID> to send a message
+Send a **POST** request to messages/<:userID> to send a message<br/>
 
-**Tweet**
+### **Tweet**<br/>
 Send **GET** request on mytweets/ endpoint to 
 retrieve the list of tweets for the user <br/>
 Send a **POST** request with body property on mytweets/ endpoint to 
@@ -29,41 +29,41 @@ create a tweet <br/>
 Send a **PUT** request on mytweets/<:tweetID> endpoint with
 updated tweet data to update the tweet <br/>
 Send a **DELETE** request on mytweets/<:tweetID> endpoint to
-delete a tweet
+delete a tweet<br/>
 
-**Retweet**
+### **Retweet**<br/>
 Send a **POST** request on retweet/<:tweetID>
-to retweet a tweet
+to retweet a tweet<br/>
 
-**Like/Unlike**
+### **Like/Unlike**<br/>
 Send a **POST** request on likes/<:tweetID> endpoint
 to like a tweet <br/>
 Send a **DELETE** request on likes/<:tweetID> endpoint
-to delete a tweet
+to delete a tweet<br/>
 
-**Thread**
+### **Thread**<br/>
 Send a **POST** request on thread/ to create
 a new thread.<br/>
 Send a **GET** request on thread/ to retrieve the 
-list of threads.
+list of threads.<br/>
 
-**ThreadTweet**
+### **ThreadTweet**<br/>
  Send a **POST** request on thread/<:threadID> with 
  tweet property to create a new tweet on a thread.<br/>
  Send a **GET** request on thread/<:threadID> to
- retrieve the list of tweets on a thread.
+ retrieve the list of tweets on a thread.<br/>
 
-**Additional:**
+### **Additional:**<br/>
 
-**Friends**
+### **Friends**<br/>
 Send a **POST** request with UserID value against handle2 property
 to add a friend on friends/ endpoint <br/>
 Send a **DELETE** request on friends/<:userID> endpoint 
-to remove a friend
+to remove a friend<br/>
 
-**Home**
+### **Home**<br/>
 Send a **GET** request on home/ endpoint
-to get the list of tweets of user and his friends
+to get the list of tweets of user and his friends<br/>
 
 
 
