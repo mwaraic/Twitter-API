@@ -4,11 +4,11 @@
 ## **Run commands:**
 
 docker compose build <br/>
-docker compose up
+docker compose up<br/>
 
-## **Test:**
-docker compose exec python bash
-python manage.py test
+## **Test:** <br/>
+docker compose exec python bash<br/>
+python manage.py test<br/>
 
 ## **APIs:**
 
@@ -53,7 +53,7 @@ list of threads.<br/>
  Send a **GET** request on thread/<:threadID> to
  retrieve the list of tweets on a thread.<br/>
 
-### **Additional:**<br/>
+### <ins> **Additional:**</ins><br/>
 
 ### **Friends**<br/>
 Send a **POST** request with UserID value against handle2 property
