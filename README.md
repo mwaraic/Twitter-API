@@ -61,6 +61,10 @@ to add a friend on friends/ endpoint <br/>
 Send a **DELETE** request on friends/<:userID> endpoint 
 to remove a friend<br/>
 
+### **Profile**<br/>
+Send a **GET** request on profile/<:userID>
+to get the tweet timeline of user.
+
 ### **Home**<br/>
 Send a **GET** request on home/ endpoint
 to get the list of tweets of user and his friends<br/>
