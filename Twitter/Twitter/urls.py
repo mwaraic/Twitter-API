@@ -16,13 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Task1.views import MessagesViewSet, ThreadViewSet,ThreadTweetViewSet,FriendsViewSet,RetweetViewSet,LikesViewSet, MyTweetsViewSet, HomeViewSet, LikeUnlikeViewSet, ProfileViewSet
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('messages/<int:senderid>', MessagesViewSet.as_view({'get':'list','post':'create'})),
+    path('messages/<int:senderid>', MessagesViewSet.as_view({'get':'list','post':'create'}), name='message'),
     path('retweet/<int:pk>', RetweetViewSet.as_view({'get':'list', 'post': 'create'})),
-    path('mytweets/', MyTweetsViewSet.as_view({'get':'list', 'post': 'create'})),
-    path('mytweets/<int:pk>/', MyTweetsViewSet.as_view({'get':'retrieve', 'put': 'update', 'delete':'destroy'})),
+    path('mytweets/', MyTweetsViewSet.as_view({'get':'list', 'post': 'create'}),name='tweet'),
+    path('mytweets/<int:pk>/', MyTweetsViewSet.as_view({'get':'retrieve', 'put': 'update', 'delete':'destroy'}), name='tweet-detail'),
     path('friends/', FriendsViewSet.as_view({'get':'list','post': 'create'})),
     path('friends/<int:handle2>/', FriendsViewSet.as_view({'get':'retrieve','delete': 'destroy'})),
     path('home/', HomeViewSet.as_view({'get':'list'})),
@@ -32,5 +36,6 @@ urlpatterns = [
     path('likes/', LikesViewSet.as_view({'get':'list'})),
     path('likes/<int:pk>/', LikeUnlikeViewSet.as_view({'post':'create','delete':'destroy'})),
     path('account/', include('dj_rest_auth.urls')),
-    path('account/signup/', include('dj_rest_auth.registration.urls'))
+    path('account/signup/', include('dj_rest_auth.registration.urls')),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]

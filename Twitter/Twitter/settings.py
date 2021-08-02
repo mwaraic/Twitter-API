@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'rest_framework_simplejwt',
     
 ]
 SITE_ID = 1
@@ -76,10 +77,30 @@ TEMPLATES = [
         },
     },
 ]
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'tmp/email')
 
 WSGI_APPLICATION = 'Twitter.wsgi.application'
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
 
+REST_FRAMEWORK = {
+    
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    
+}
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
