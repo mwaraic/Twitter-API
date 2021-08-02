@@ -13,8 +13,8 @@ python manage.py test
 ## **APIs:**
 
 ### **User Login and Registration**<br/>
-Send a **POST** request to account/login to login
-Send a **POST** request to account/signup to register
+Send a **POST** request to account/login to login<br/>
+Send a **POST** request to account/signup to register<br/>
 
 ### **Message**<br/>
 Send a **GET** request to messages/<:userID> to retrieve a list
