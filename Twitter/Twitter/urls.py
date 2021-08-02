@@ -16,10 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Task1.views import MessagesViewSet, ThreadViewSet,ThreadTweetViewSet,FriendsViewSet,RetweetViewSet,LikesViewSet, MyTweetsViewSet, HomeViewSet, LikeUnlikeViewSet, ProfileViewSet
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,5 +33,4 @@ urlpatterns = [
     path('likes/<int:pk>/', LikeUnlikeViewSet.as_view({'post':'create','delete':'destroy'})),
     path('account/', include('dj_rest_auth.urls')),
     path('account/signup/', include('dj_rest_auth.registration.urls')),
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]

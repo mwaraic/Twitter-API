@@ -1,26 +1,40 @@
-from rest_framework.test import APIRequestFactory
 from django.contrib.auth.models import User
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 from .models import Messages, Tweet
-from django.urls import path
-import json
 from django.test import TestCase
+from django.test import Client
 
+class LoginRegistrationTest(TestCase):
+    
+    """
+    Ensure we can create a new user object and log it in.
+    """
+    
+    def test_login_registration(self):
+        user = User.objects.create(username='testuser')
+        user.set_password('12345')
+        user.save()
 
-class LogInTest(TestCase):
-    def setUp(self):
-        self.credentials = {
-            'username': 'test',
-            'password': 'test'}
-        User.objects.create_user(**self.credentials)
-    def test_login(self):
-        # send login data
-        response = self.client.post('account/login/', self.credentials, follow=True)
-        # should be logged in now
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-
+        c = Client()
+        logged_in = c.login(username='testuser', password='12345')
+        self.assertTrue(logged_in) 
+        
+class MessageTests(APITestCase):
+    def test_create_message(self):
+        
+        """
+        Ensure we can create a new message object.
+        """
+        
+        self.client.force_login(User.objects.get_or_create(username='test')[0])
+        url = reverse('message', kwargs={'senderid':'1'})
+        data = {'message': 'DabApps'}
+        response = self.client.post(url, data, format='json', follow=True)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Messages.objects.count(), 1)
+        self.assertEqual(Messages.objects.get().message, 'DabApps')
         
 class TweetTests(APITestCase):
     
