@@ -2,6 +2,7 @@
 
 
 **Run commands:**
-1.docker compose build
-2.docker compose up
+
+docker compose build <br/>
+docker compose up
     
