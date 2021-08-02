@@ -43,7 +43,7 @@ to retweet a tweet<br/>
 Send a **POST** request on likes/<:tweetID> endpoint
 to like a tweet <br/>
 Send a **DELETE** request on likes/<:tweetID> endpoint
-to delete a tweet<br/>
+to unlike a tweet<br/>
 
 ### **Thread**<br/>
 Send a **POST** request on thread/ to create
