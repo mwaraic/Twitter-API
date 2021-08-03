@@ -41,7 +41,7 @@ to retweet a tweet<br/>
 
 ### **Like/Unlike**<br/>
 Send a **GET** request on likes/ endpoint
-to get list of tweets a user likes <br/>
+to retrieve list of tweets a user likes <br/>
 Send a **POST** request on likes/<:tweetID> endpoint
 to like a tweet <br/>
 Send a **DELETE** request on likes/<:tweetID> endpoint
