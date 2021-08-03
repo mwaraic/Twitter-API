@@ -88,18 +88,3 @@ class TweetTests(APITestCase):
         response = self.client.delete(reverse('tweet-detail', kwargs={'pk': tweet.id}),data, format='json',follow=True)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         
-
-class MessageTests(APITestCase):
-    def test_create_message(self):
-        
-        """
-        Ensure we can create a new message object.
-        """
-        
-        self.client.force_login(User.objects.get_or_create(username='test')[0])
-        url = reverse('message', kwargs={'senderid':'1'})
-        data = {'message': 'DabApps'}
-        response = self.client.post(url, data, format='json', follow=True)
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(Messages.objects.count(), 1)
-        self.assertEqual(Messages.objects.get().message, 'DabApps')
