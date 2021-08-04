@@ -17,22 +17,22 @@ python manage.py test<br/>
 ## **APIs:**
 
 ### **User Login and Registration**<br/>
-Send a **POST** request to account/login to login<br/>
-Send a **POST** request to account/signup to register<br/>
+Send a **POST** request on account/login to login<br/>
+Send a **POST** request on account/signup to register<br/>
 
 ### **Message**<br/>
-Send a **GET** request to messages/<:userID> to retrieve a list
+Send a **GET** request on messages/<:userID> to retrieve a list
 of messages <br/>
-Send a **POST** request to messages/<:userID> to send a message<br/>
+Send a **POST** request on messages/<:userID> to send a message<br/>
 
 ### **Tweet**<br/>
-Send **GET** request on mytweets/ endpoint to 
+Send **GET** request on mytweets/ to 
 retrieve the list of tweets for the user <br/>
-Send a **POST** request with body property on mytweets/ endpoint to 
+Send a **POST** request with body property on mytweets/ to 
 create a tweet <br/>
-Send a **PUT** request on mytweets/<:tweetID> endpoint with
+Send a **PUT** request on mytweets/<:tweetID> with
 updated tweet data to update the tweet <br/>
-Send a **DELETE** request on mytweets/<:tweetID> endpoint to
+Send a **DELETE** request on mytweets/<:tweetID> to
 delete a tweet<br/>
 
 ### **Retweet**<br/>
@@ -40,11 +40,11 @@ Send a **POST** request on retweet/<:tweetID>
 to retweet a tweet<br/>
 
 ### **Like/Unlike**<br/>
-Send a **GET** request on likes/ endpoint
+Send a **GET** request on likes/
 to retrieve list of tweets a user likes <br/>
-Send a **POST** request on likes/<:tweetID> endpoint
+Send a **POST** request on likes/<:tweetID>
 to like a tweet <br/>
-Send a **DELETE** request on likes/<:tweetID> endpoint
+Send a **DELETE** request on likes/<:tweetID>
 to unlike a tweet<br/>
 
 ### **Thread**<br/>
@@ -63,8 +63,8 @@ list of threads.<br/>
 
 ### **Friends**<br/>
 Send a **POST** request with UserID value against handle2 property
-to add a friend on friends/ endpoint <br/>
-Send a **DELETE** request on friends/<:userID> endpoint 
+to add a friend on friends/ <br/>
+Send a **DELETE** request on friends/<:userID>
 to remove a friend<br/>
 
 ### **Profile**<br/>
@@ -72,7 +72,7 @@ Send a **GET** request on profile/<:userID>
 to get the tweet timeline of user.
 
 ### **Home**<br/>
-Send a **GET** request on home/ endpoint
+Send a **GET** request on home/
 to get the list of tweets of user and his friends<br/>
 
 
