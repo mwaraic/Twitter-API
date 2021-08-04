@@ -19,7 +19,8 @@ class MessagesViewSet(viewsets.ModelViewSet):
     Send a GET request on messages/<:userID> to retrieve a list
     of messages
 
-    Send a POST request on messages/<:userID> to send a message
+    Send a POST request on messages/<:userID> with message property
+    to send a message
     
     """
 
@@ -282,7 +283,7 @@ class ThreadTweetViewSet(viewsets.ModelViewSet):
     of creating new tweets on a thread.
 
     Send a POST request on thread/<:threadID> with 
-    tweet property to create a new tweet on a thread.
+    body property to create a new tweet on a thread.
 
     Send a GET request on thread/<:threadID> to
     retrieve the list of tweets on a thread.
