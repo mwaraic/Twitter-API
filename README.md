@@ -23,7 +23,8 @@ Send a **POST** request on account/signup to register<br/>
 ### **Message**<br/>
 Send a **GET** request on messages/<:userID> to retrieve a list
 of messages <br/>
-Send a **POST** request on messages/<:userID> to send a message<br/>
+Send a **POST** request on messages/<:userID> with message property
+to send a message<br/>
 
 ### **Tweet**<br/>
 Send **GET** request on mytweets/ to 
@@ -55,7 +56,7 @@ list of threads.<br/>
 
 ### **ThreadTweet**<br/>
  Send a **POST** request on thread/<:threadID> with 
- tweet property to create a new tweet on a thread.<br/>
+ body property to create a new tweet on a thread.<br/>
  Send a **GET** request on thread/<:threadID> to
  retrieve the list of tweets on a thread.<br/>
 
