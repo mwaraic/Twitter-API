@@ -16,10 +16,10 @@ class MessagesViewSet(viewsets.ModelViewSet):
     Calls Messages method which serves the puropse of sending and
     recieving message from a user.
 
-    Send a GET request to messages/<:userID> to retrieve a list
+    Send a GET request on messages/<:userID> to retrieve a list
     of messages
 
-    Send a POST request to messages/<:userID> to send a message
+    Send a POST request on messages/<:userID> to send a message
     
     """
 
@@ -52,16 +52,16 @@ class MyTweetsViewSet(viewsets.ModelViewSet):
     Tweets can be created, updated, deleted, 
     and retireved.
 
-    Send a GET request on mytweets/ endpoint to 
+    Send a GET request on mytweets/ to 
     retrieve the list of tweets
 
-    Send a POST request with body property on mytweets/ endpoint to 
+    Send a POST request with body property on mytweets/ to 
     create a tweet
 
-    Send a PUT request on mytweets/<:tweetID> endpoint with
+    Send a PUT request on mytweets/<:tweetID> with
     updated tweet data to update the tweet
 
-    Send a DELETE request on mytweets/<:tweetID> endpoint to
+    Send a DELETE request on mytweets/<:tweetID> to
     delete a tweet
 
     """
@@ -117,8 +117,8 @@ class HomeViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     Calls Home method serves the purpose of 
     listing a user and his friends tweets
     
-    Send a GET request on home/ endpoint
-    to get the list of tweets
+    Send a GET request on home/ to get the list
+    of tweets
 
     """
 
@@ -147,10 +147,10 @@ class FriendsViewSet(viewsets.ModelViewSet):
     
     Send a POST request with UserID 
     value against handle2 property
-    to add a friend on friends/ endpoint
+    to add a friend on friends/ 
     
     Send a DELETE request on    
-    friends/<:userID> endpoint to remove a 
+    friends/<:userID> to remove a 
     friend
     
     """
@@ -187,10 +187,10 @@ class LikeUnlikeViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin, mixins
     Calls Like Unlike method which serves the purpose of 
     liking/unliking a tweet
 
-    Send a POST request on likes/<:tweetID> endpoint
+    Send a POST request on likes/<:tweetID>
     to like a tweet
 
-    Send a DELETE request on likes/<:tweetID> endpoint
+    Send a DELETE request on likes/<:tweetID>
     to delete a tweet
     
     """
@@ -218,7 +218,7 @@ class LikesViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     Calls Likes method which serves the purpose
     of getting the list of tweets user has liked.
 
-    Send a GET request on likes/ endpoint to retrieve the 
+    Send a GET request on likes/ to retrieve the 
     list of tweets user has liked.
 
     """
