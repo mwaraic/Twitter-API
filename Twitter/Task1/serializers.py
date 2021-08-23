@@ -1,7 +1,4 @@
-from django.contrib.auth.models import User
-from django.db import models
-from django.db.models.fields import CharField, IntegerField
-from rest_framework import fields, serializers
+from rest_framework import serializers
 from .models import Friends, Messages, Thread, Tweet, Like, ThreadTweet
 
 
