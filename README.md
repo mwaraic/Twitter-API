@@ -1,4 +1,4 @@
-# Twitter-API
+# Twitter API
 
 
 ## **Run commands:**
