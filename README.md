@@ -16,69 +16,84 @@ python manage.py test<br/>
 
 ## **APIs:**
 
-### **User Login and Registration**<br/>
-Send a **POST** request on account/login to login<br/>
-Send a **POST** request on account/signup to register<br/>
+### User Authentication
 
-### **Message**<br/>
-Send a **GET** request on messages/<:userID> to retrieve a list
-of messages <br/>
-Send a **POST** request on messages/<:userID> with message property
-to send a message<br/>
+- **POST** `/account/login`
+  - Login with credentials.
 
-### **Tweet**<br/>
-Send **GET** request on mytweets/ to 
-retrieve the list of tweets for the user <br/>
-Send a **POST** request with body property on mytweets/ to 
-create a tweet <br/>
-Send a **PUT** request on mytweets/<:tweetID> with
-updated tweet data to update the tweet <br/>
-Send a **DELETE** request on mytweets/<:tweetID> to
-delete a tweet<br/>
+- **POST** `/account/signup`
+  - Register a new user.
 
-### **Retweet**<br/>
-Send a **POST** request on retweet/<:tweetID>
-to retweet a tweet<br/>
+### Messages
 
-### **Like/Unlike**<br/>
-Send a **GET** request on likes/
-to retrieve list of tweets a user likes <br/>
-Send a **POST** request on likes/<:tweetID>
-to like a tweet <br/>
-Send a **DELETE** request on likes/<:tweetID>
-to unlike a tweet<br/>
+- **GET** `/messages/<userID>`
+  - Retrieve messages for a specific user.
 
-### **Thread**<br/>
-Send a **POST** request on thread/ to create
-a new thread.<br/>
-Send a **GET** request on thread/ to retrieve the 
-list of threads.<br/>
+- **POST** `/messages/<userID>`
+  - Send a message to a user.
 
-### **ThreadTweet**<br/>
- Send a **POST** request on thread/<:threadID> with 
- body property to create a new tweet on a thread.<br/>
- Send a **GET** request on thread/<:threadID> to
- retrieve the list of tweets on a thread.<br/>
+### Tweets
 
-### <ins> **Additional:**</ins><br/>
+- **GET** `/mytweets/`
+  - Retrieve tweets for the authenticated user.
 
-### **Friends**<br/>
-Send a **POST** request with UserID value against handle2 property
-to add a friend on friends/ <br/>
-Send a **DELETE** request on friends/<:userID>
-to remove a friend<br/>
+- **POST** `/mytweets/`
+  - Create a new tweet for the authenticated user.
 
-### **Profile**<br/>
-Send a **GET** request on profile/<:userID>
-to get the tweet timeline of user.
+- **PUT** `/mytweets/<tweetID>`
+  - Update a specific tweet.
 
-### **Home**<br/>
-Send a **GET** request on home/
-to get the list of tweets of user and his friends<br/>
+- **DELETE** `/mytweets/<tweetID>`
+  - Delete a specific tweet.
 
+### Retweet
 
+- **POST** `/retweet/<tweetID>`
+  - Retweet a specific tweet.
 
+### Like/Unlike
 
+- **GET** `/likes/`
+  - Retrieve tweets liked by the authenticated user.
 
+- **POST** `/likes/<tweetID>`
+  - Like a specific tweet.
 
-    
+- **DELETE** `/likes/<tweetID>`
+  - Unlike a specific tweet.
+
+### Thread
+
+- **POST** `/thread/`
+  - Create a new thread.
+
+- **GET** `/thread/`
+  - Retrieve all threads.
+
+### Thread Tweets
+
+- **POST** `/thread/<threadID>`
+  - Create a new tweet within a thread.
+
+- **GET** `/thread/<threadID>`
+  - Retrieve tweets within a specific thread.
+
+### Additional APIs
+
+#### Friends
+
+- **POST** `/friends/`
+  - Add a friend for the authenticated user.
+
+- **DELETE** `/friends/<userID>`
+  - Remove a friend.
+
+#### Profile
+
+- **GET** `/profile/<userID>`
+  - Retrieve the tweet timeline of a specific user.
+
+#### Home
+
+- **GET** `/home/`
+  - Retrieve tweets from the authenticated user and their friends.
